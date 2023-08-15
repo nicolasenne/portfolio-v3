@@ -1,0 +1,120 @@
+@use '../abstracts/colors' as a;
+
+#name-4 {
+	stroke: white;
+	stroke-dasharray: 7;
+}
+
+.about {
+  height: 100vh;
+  padding: 5rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+
+	.profile-content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	span {
+		border-bottom: 2px solid a.$violet;
+		color: a.$violet;
+		font-weight: 700;
+		transition: all .2s ease;
+	}
+
+	span:hover {
+		border-bottom: 2px solid a.$purple;
+		color: a.$purple;
+		transition: all .2s ease;
+	}
+
+	.profile-img {
+		width: 40rem;
+		height: 100%;
+	}
+
+	.signature {
+		width: 20rem;
+		height: 100%;
+		margin: auto;
+	}
+}
+
+
+// Tablets
+@media (max-width: 62rem) {
+	.about {
+		height: 100vh;
+	}
+
+	.skills-flex {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	.skills-content {
+		width: 50%;
+	}
+
+	.profile {
+		flex-direction: column;
+		gap: 1.5rem;
+
+		.profile-content {
+			text-align: center;
+			width: 80%;
+			margin: auto;
+		}
+
+		.profile-img {
+			width: 70%;
+		}
+	}
+}
+
+// Smartphones
+@media (max-width: 43rem) {
+
+	.about {
+		height: 100vh;
+	}
+
+	.skills-flex {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 3rem;
+	}
+
+	.skills-content {
+		width: 75%;
+	}
+
+	.profile {
+		flex-direction: column;
+		gap: 1.5rem;
+
+		.profile-content {
+			text-align: center;
+			width: 100%;
+		}
+
+		.profile-img {
+			width: 90%;
+		}
+	}
+	
+}

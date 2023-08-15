@@ -1,0 +1,106 @@
+@use '../abstracts/colors' as a;
+
+.contact {
+  height: 100vh;
+  padding: 5rem 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+  p {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.form {
+  width: 50%;
+  margin: 2rem auto;
+}
+
+.field-flex {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+.field {
+  position: relative;
+  width: 100%;
+  
+  input {
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    margin-bottom: 4vh;
+    border: none;
+    border-bottom: 1px solid a.$white;
+    outline: none;
+    background: transparent;
+    color: a.$white;
+  }
+  
+  label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1vh 0;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: .5s;
+    color: a.$white;
+    font-weight: 700;
+    background: transparent;
+  }
+}
+
+.field input:focus ~ label,
+.field input:valid ~ label {
+  top: -2.5vh;
+  left: 0;
+  font-size: 0.9rem;
+  color: a.$violet;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px a.$jet inset !important;
+}
+
+input:-webkit-autofill{
+  -webkit-text-fill-color: a.$white !important;
+}
+
+// Tablets
+@media (max-width: 62rem) {
+  .contact {
+  
+    p {
+      width: 100%;
+    }
+  }
+  
+  .form {
+    width: 100%;
+  }
+}
+
+// Smartphones
+@media (max-width: 43rem) {
+  .contact {
+  
+    p {
+      width: 100%;
+    }
+  }
+  
+  .form {
+    width: 100%;
+  }
+	
+}

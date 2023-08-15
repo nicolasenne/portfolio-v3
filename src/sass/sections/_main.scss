@@ -1,0 +1,50 @@
+@use '../abstracts/colors' as a;
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  h1 {
+    color: a.$violet;
+    font-size: 7rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5;
+    width: 30%;
+  }
+  
+}
+
+// Tablets
+@media (max-width: 62rem) {
+  .main {
+    h2 {
+      width: 60%;
+    }
+  }
+}
+
+// Smartphones
+@media (max-width: 43rem) {
+  .main {
+    h1 {
+      font-size: 4rem;
+    }
+  
+    h2 {
+      width: 80%;
+    }
+  }
+}

@@ -1,0 +1,127 @@
+@use '../abstracts/colors' as a;
+
+.work {
+  height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.cards {
+  display: flex;
+  gap: 2.5rem;
+}
+
+.card {
+  height: 25rem;
+  width: 20rem;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  background: #000;
+  backface-visibility: hidden;
+  transition: all .25s ease;
+  overflow: hidden;
+  margin: 0 auto;
+  
+  &:hover {
+    transform: scale(.9);
+  }
+
+  &:after {
+    width: 100%;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 150px;
+    position: absolute;
+    z-index: 20;
+    transition: all .25s ease;
+  }
+
+  &:hover:after {
+    height: 280px;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5));
+  }
+  
+  img {
+    height: 100%;
+    width: 100%;
+    z-index: 10;
+    object-fit: cover;
+    transition: all .25s ease;
+  }
+  
+  &:hover img {
+    transform: scale(1.25);
+  }
+  
+  .card-info {
+    z-index: 30;
+    position: absolute;
+    bottom: 0;
+    padding: 2rem;
+    opacity: 0;
+    transition: all .25s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  &:hover .card-info {
+    opacity: 1;
+    transition: all .25s ease;
+  }
+}
+
+.card-links {
+  font-size: 1.5rem;
+  display: flex;
+  gap: 1rem;
+
+  a {
+    color: a.$white;
+  }
+}
+
+
+// Tablets
+@media (max-width: 62rem) {
+  .work {
+    height: 250vh;
+  }
+  
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    .card-info {
+      opacity: 1;
+    }
+  }
+}
+
+// Smartphones
+@media (max-width: 43rem) {
+  .work {
+    height: 225vh;
+  }
+  
+  .cards {
+    flex-direction: column;
+  }
+
+  .card {
+    .card-info {
+      opacity: 1;
+    }
+  }
+}

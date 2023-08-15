@@ -1,0 +1,57 @@
+@use '../abstracts/colors' as a;
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  transition: all .2s ease-in-out;
+  z-index: 1000;
+
+  .logo {
+    height: 3rem;
+    width: 100%;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2.5rem;
+    font-weight: 700;
+    padding: 0;
+  }
+
+  li {
+    transition: all .2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+      transition: all .2s ease-in-out;
+    }
+  }
+
+  a {
+    color: a.$white;
+
+    &:hover {
+      color: a.$violet;
+    }
+  }
+}
+
+
+// Tablets
+@media (max-width: 62rem) {
+  .navbar {
+    position: static;
+  }
+}
+
+// Smartphones
+@media (max-width: 43rem) {
+  .navbar {
+    position: static;
+  }
+}

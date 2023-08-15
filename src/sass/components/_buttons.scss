@@ -1,0 +1,73 @@
+@use '../abstracts/colors' as a;
+
+.btn {
+  background: linear-gradient(to right, a.$purple, a.$violet, a.$purple);
+  background-size: 400% 400%;
+  border-radius: 50px;
+  color: a.$white;
+  display: inline-block;
+  font-weight: 700;
+  margin: 1.5rem auto;
+  padding: 0.8rem 2rem;
+  transition: .2s ease-in-out;
+  width: 12rem;
+  border: none;
+  display: block;
+  cursor: pointer;
+
+  &:hover {
+    animation: animatedgradient 3s ease-in-out infinite;
+  }
+
+  @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+}
+
+  .btn-send {
+    position: relative;
+    overflow: hidden;
+    transition: .3s ease;
+  }
+
+  #status {
+    position: absolute;
+    top: 37%;
+    left: 34%;
+    z-index: 1;
+    visibility: hidden;
+    transition: .3s ease;
+  }
+
+  #status .success {
+    transform-origin: 50% 50%;
+    transform: translateY(-50%) rotate(0deg) scale(0);
+    transition: .3s ease;
+    color: a.$white;
+  }
+
+  .btn-send.is_active {
+    width: 50px;
+    height: 50px;
+    padding: 0;
+  }
+
+  .btn-send.is_active .success {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .btn-send.is_active span {
+    opacity: 0;
+    visibility: hidden;
+  }
+

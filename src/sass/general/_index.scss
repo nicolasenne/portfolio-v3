@@ -1,0 +1,46 @@
+@forward '../general/container';
+
+@use "../abstracts/colors" as a;
+
+::selection {
+  background: a.$purple;
+  color: a.$white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+  color: a.$white;
+  font-family: 'FSLucasPro', 'Helvetica', sans-serif;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  background: a.$jet;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.title::after {
+  display: block;
+  content: '';
+  width: 5rem;
+  margin: 10px auto 30px;
+  height: 2px;
+  background: a.$violet;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
